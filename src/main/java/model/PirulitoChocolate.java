@@ -7,7 +7,10 @@ public class PirulitoChocolate extends Produto{
     private BigDecimal precoUnidade;
 
     public PirulitoChocolate() {}
-    public PirulitoChocolate(BigDecimal precoUnidade, Sabor saborPirulito) {
+    public PirulitoChocolate(String nome, BigDecimal precoFinal, String descricao,BigDecimal precoUnidade, Sabor saborPirulito) {
+        this.nome = nome;
+        this.precoFinal = precoFinal;
+        this.descricao = descricao;
         this.precoUnidade = precoUnidade;
         this.saborPirulito = saborPirulito;
 

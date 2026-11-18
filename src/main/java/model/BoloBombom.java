@@ -8,7 +8,10 @@ public class BoloBombom extends Produto{
     private BigDecimal precoUnidade;
 
     public BoloBombom() {}
-    public BoloBombom( TipoMassa tipoMassa, TipoRecheio tipoRecheio, BigDecimal precoUnidade ) {
+    public BoloBombom( String nome, BigDecimal precoFinal, String descricao, TipoMassa tipoMassa, TipoRecheio tipoRecheio, BigDecimal precoUnidade ) {
+        this.nome = nome;
+        this.precoFinal = precoFinal;
+        this.descricao = descricao;
         this.tipoMassa = tipoMassa;
         this.tipoRecheio = tipoRecheio;
         this.precoUnidade = precoUnidade;

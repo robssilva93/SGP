@@ -7,7 +7,10 @@ public class BemCasado extends Produto{
     private BigDecimal precoUnidade;
 
     public BemCasado (){}
-    public BemCasado(BigDecimal precoUnidade){
+    public BemCasado(String nome, BigDecimal precoFinal, String descricao, BigDecimal precoUnidade){
+        this.nome = nome;
+        this.precoFinal = precoFinal;
+        this.descricao = descricao;
         this.precoUnidade = precoUnidade;
     }
 

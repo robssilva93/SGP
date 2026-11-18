@@ -10,7 +10,10 @@ public class Brigadeiro extends Produto{
 
     public Brigadeiro() {}
 
-    public Brigadeiro(boolean personalizado, String tema, SaborBrigadeiro saborBrigadeiro, BigDecimal precoUnidade) {
+    public Brigadeiro(String nome, BigDecimal precoFinal, String descricao, boolean personalizado, String tema, SaborBrigadeiro saborBrigadeiro, BigDecimal precoUnidade) {
+        this.nome = nome;
+        this.precoFinal = precoFinal;
+        this.descricao = descricao;
         this.personalizado = personalizado;
 
         if (this.personalizado) {
