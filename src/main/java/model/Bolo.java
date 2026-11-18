@@ -13,8 +13,10 @@ public class Bolo extends Produto{
     private TipoRecheio tipoRecheio;
 
     public Bolo(){}
-    public Bolo(float diametro, float peso, TipoMassa tipoMassa, TipoCobertura tipoCobertura,
-                int andares, BigDecimal precoDiametro, TipoRecheio tipoRecheio) {
+    public Bolo(String nome, BigDecimal precoFinal, String descricao, float diametro, float peso, TipoMassa tipoMassa, TipoCobertura tipoCobertura, int andares, BigDecimal precoDiametro, TipoRecheio tipoRecheio) {
+        this.nome = nome;
+        this.precoFinal = precoFinal;
+        this.descricao = descricao;
         this.diametro = diametro;
         this.peso = peso;
         this.tipoMassa = tipoMassa;

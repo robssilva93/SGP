@@ -4,25 +4,25 @@ import java.math.BigDecimal;
 
 public class Produto {
 
-    private int id;
-    private String nome;
-    private String descricao;
-    private BigDecimal precoFinal;
+    protected int idProduto;
+    protected String nome;
+    protected String descricao;
+    protected BigDecimal precoFinal;
 
     public Produto(){}
-    public Produto(int id, String nome, String descricao, BigDecimal precoFinal) {
-        this.id = id;
+    public Produto(int idProduto, String nome, String descricao, BigDecimal precoFinal) {
+        this.idProduto = idProduto;
         this.nome = nome;
         this.descricao = descricao;
         this.precoFinal = precoFinal;
     }
 
-    public int getId() {
-        return id;
+    public int getIdProduto() {
+        return idProduto;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
 
     public String getNome() {
