@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Pedido {
     private int idPedido;
-    private Cliente cliente;
-    private Funcionario funcionario;
+    private int idCliente;
+    private int idFuncionario;
     private LocalDate dataPedido;
     private LocalDate dataAgendada;
     private LocalTime horaAgendada;
@@ -23,10 +23,9 @@ public class Pedido {
 
     public Pedido() {}
 
-    public Pedido(int idPedido, Cliente cliente, Funcionario funcionario, LocalDate dataPedido, LocalDate dataAgendada, LocalTime horaAgendada, BigDecimal valorTotal, BigDecimal valorPago, StatusPedido status, TipoAtendimento tipoAtendimento, String endereco, String detalhesEspecificos, List<ItemPedido> itensPedido, List<Pagamento> pagamentos) {
-        this.idPedido = idPedido;
-        this.cliente = cliente;
-        this.funcionario = funcionario;
+    public Pedido(int idCliente, int idFuncionario, LocalDate dataPedido, LocalDate dataAgendada, LocalTime horaAgendada, BigDecimal valorTotal, BigDecimal valorPago, StatusPedido status, TipoAtendimento tipoAtendimento, String endereco, String detalhesEspecificos, List<ItemPedido> itensPedido, List<Pagamento> pagamentos) {
+        this.idCliente = idCliente;
+        this.idFuncionario = idFuncionario;
         this.dataPedido = dataPedido;
         this.dataAgendada = dataAgendada;
         this.horaAgendada = horaAgendada;
@@ -48,20 +47,20 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    public int getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public LocalDate getDataPedido() {

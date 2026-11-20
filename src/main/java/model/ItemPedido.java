@@ -4,15 +4,16 @@ import java.math.BigDecimal;
 
 public class ItemPedido {
     private int idItem;
-    private Pedido pedido;
+    private int idPedido;
+    private int idProduto;
     private int quantidade;
     private BigDecimal valorParcial;
     private String observacoes;
 
     public ItemPedido(){}
-    public ItemPedido(int idItem, Pedido pedido, int quantidade, BigDecimal valorParcial, String observacoes) {
-        this.idItem = idItem;
-        this.pedido = pedido;
+    public ItemPedido(int idPedido, int idProduto, int quantidade, BigDecimal valorParcial, String observacoes) {
+        this.idPedido = idPedido;
+        this.idProduto = idProduto;
         this.quantidade = quantidade;
         this.valorParcial = valorParcial;
         this.observacoes = observacoes;
@@ -26,12 +27,20 @@ public class ItemPedido {
         this.idItem = idItem;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public int getIdPedido() {
+        return idPedido;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
+
+    public int getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
 
     public int getQuantidade() {

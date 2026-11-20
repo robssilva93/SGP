@@ -5,16 +5,15 @@ import java.time.LocalDate;
 
 public class Pagamento {
     private int idPagamento;
-    private Pedido pedido;
+    private int idPedido;
     private BigDecimal valorPago;
     private LocalDate dataPagamento;
     private String comprovante;
 
     public Pagamento() {}
 
-    public Pagamento(int idPagamento, Pedido pedido, BigDecimal valorPago, LocalDate dataPagamento, String comprovante) {
-        this.idPagamento = idPagamento;
-        this.pedido = pedido;
+    public Pagamento(int idPedido, BigDecimal valorPago, LocalDate dataPagamento, String comprovante) {
+        this.idPedido = idPedido;
         this.valorPago = valorPago;
         this.dataPagamento = dataPagamento;
         this.comprovante = comprovante;
@@ -28,12 +27,12 @@ public class Pagamento {
         this.idPagamento = idPagamento;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public int getIdPedido() {
+        return idPedido;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     public BigDecimal getValorPago() {

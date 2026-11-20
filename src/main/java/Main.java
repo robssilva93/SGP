@@ -3,6 +3,7 @@ import model.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,46 +11,122 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BemCasadoDao bemCasadoDao = new BemCasadoDao();
-        BemCasado bc1 = new BemCasado("bem casado gostoso", BigDecimal.valueOf(6.0), "descrição do bem casado", BigDecimal.valueOf(15.0));
+//        //TESTES PEDIDO
+//        ItemPedidoDao itemPedidoDao = new ItemPedidoDao();
+//        PagamentoDao pagamentoDao = new PagamentoDao();
+//        PedidoDao pedidoDao = new PedidoDao();
 
-        try {
-            //SALVAR
-            bemCasadoDao.salvar(bc1);
+//        List<ItemPedido> listaItens = itemPedidoDao.buscarPorPedido(1);
+//        List<Pagamento> pagamentos = pagamentoDao.buscarPorPedido(1);
+//
+//        //SALVAR
+//        Pedido pedido1 = new Pedido(1, 1, LocalDate.now(), LocalDate.now(), LocalTime.now(), BigDecimal.valueOf(100.0), BigDecimal.valueOf(50.0), StatusPedido.CONFIRMADO, TipoAtendimento.RETIRADA, null, "PEDIDO TESTE", listaItens, pagamentos);
+//        pedidoDao.salvar(pedido1);
+//
+//        System.out.println("BUSCA PEDIDO POR ID");
+//        Optional<Pedido> pedido2 = pedidoDao.buscarPorId(10);
+//        System.out.println(pedido2.get().getIdPedido());
+//        System.out.println(pedido2.get().getIdCliente());
+//        System.out.println(pedido2.get().getIdFuncionario());
+//        System.out.println(pedido2.get().getDataAgendada());
+//        System.out.println(pedido2.get().getDataPedido());
+//        System.out.println(pedido2.get().getHoraAgendada());
+//        System.out.println(pedido2.get().getValorTotal());
+//        System.out.println(pedido2.get().getValorPago());
+//        System.out.println(pedido2.get().getStatus());
+//        System.out.println(pedido2.get().getTipoAtendimento());
+//        System.out.println(pedido2.get().getEndereco());
+//        System.out.println(pedido2.get().getDetalhesEspecificos());
+//        System.out.println("================================");
+//        System.out.println("ITENS PEDIDOS");
+//        System.out.println("================================");
+//        for (ItemPedido ip : pedido2.get().getItensPedido()) {
+//            System.out.println("Id item pedido: "+ip.getIdItem());
+//            System.out.println("Id pedido: "+ip.getIdPedido());
+//            System.out.println("Id produto: "+ip.getIdProduto());
+//            System.out.println("Valor parcial: "+ip.getValorParcial());
+//            System.out.println("Quantidade: "+ip.getQuantidade());
+//            System.out.println("Observações: "+ip.getObservacoes());
+//            System.out.println("================================");
+//        }
+//        System.out.println("================================");
+//        System.out.println("PAGAMENTOS");
+//        System.out.println("================================");
+//        for (Pagamento pag : pagamentos) {
+//            System.out.println("Id pagamento: "+pag.getIdPagamento());
+//            System.out.println("Id pedido: "+pag.getIdPedido());
+//            System.out.println("data pagamento: "+pag.getDataPagamento());
+//            System.out.println("valor pago: "+pag.getValorPago());
+//            System.out.println("comprovante: "+pag.getComprovante());
+//            System.out.println("================================");
+//        }
+//
+//        // LISTAR TODOS
+//        System.out.println("LISTAR TODOS");
+//        List<Pedido> listaP = pedidoDao.listarTodos();
+//        System.out.println("Quantidade de pedidos: " + listaP.size());
+//
+//        // BUSCAR POR CLIENTE
+//        List<Pedido> listaPedidoCliente = pedidoDao.buscarPorCliente(2);
+//        System.out.println("Quantidade de pedidos do cliente 2: " + listaPedidoCliente.size());
+//
+//        // BUSCAR POR STATUS
+//        List<Pedido> listaPedidoStatus = pedidoDao.buscarPorStatus(StatusPedido.CONFIRMADO.name());
+//        System.out.println("Quantidade de pedidos CONFIRMADOS: " + listaPedidoStatus.size());
+//
+//        // ALTERANDO PEDIDO
+//        pedido2.get().setDetalhesEspecificos("PEDIDO TESTE ALTERADO");
+//        pedidoDao.atualizar(pedido2.get());
+//        Optional<Pedido> pedidoRetornado = pedidoDao.buscarPorId(pedido2.get().getIdPedido());
+//        System.out.println("Descrição alterada: "+pedidoRetornado.get().getDetalhesEspecificos());
 
-            System.out.println("\nBUSCA POR ID");
-            //BUSCAR POR ID
-            Optional<BemCasado> bc2 = bemCasadoDao.buscarPorId(30);
-            System.out.println(bc2.get().getNome());
-            System.out.println(bc2.get().getDescricao());
-
-            System.out.println("\nBUSCA POR NOME");
-            //BUSCAR POR NOME
-            List<BemCasado> bcNome = bemCasadoDao.buscarPorNome("bem casado gostoso");
-            for (BemCasado bc : bcNome) {
-                System.out.println(bc.getNome());
-                System.out.println(bc.getDescricao());
-            }
-
-            bc2.get().setNome("Alex Ferreira");
-
-            //ALTERAR
-            bemCasadoDao.atualizar(bc2.get());
-
-            System.out.println("\nBOMBOM COM NOME ALTERADO");
-            // IMPRIMIR ALTERADO
-            Optional<BemCasado> bcRetornado = bemCasadoDao.buscarPorId(bc2.get().getIdProduto());
-            System.out.println(bcRetornado.get().getNome());
+//        //DELETANDO
+//        boolean deletou = pedidoDao.deletar(10);
+//        System.out.println(deletou);
 
 
-            System.out.println("DELETOU?");
-            //DELETAR
-            System.out.println(bemCasadoDao.deletar(bc2.get().getIdProduto()));
 
 
-        } finally {
-            bemCasadoDao.fecharConexao();
-        }
+//        BemCasadoDao bemCasadoDao = new BemCasadoDao();
+//        BemCasado bc1 = new BemCasado("bem casado gostoso", BigDecimal.valueOf(6.0), "descrição do bem casado", BigDecimal.valueOf(15.0));
+//
+//        try {
+//            //SALVAR
+//            bemCasadoDao.salvar(bc1);
+//
+//            System.out.println("\nBUSCA POR ID");
+//            //BUSCAR POR ID
+//            Optional<BemCasado> bc2 = bemCasadoDao.buscarPorId(30);
+//            System.out.println(bc2.get().getNome());
+//            System.out.println(bc2.get().getDescricao());
+//
+//            System.out.println("\nBUSCA POR NOME");
+//            //BUSCAR POR NOME
+//            List<BemCasado> bcNome = bemCasadoDao.buscarPorNome("bem casado gostoso");
+//            for (BemCasado bc : bcNome) {
+//                System.out.println(bc.getNome());
+//                System.out.println(bc.getDescricao());
+//            }
+//
+//            bc2.get().setNome("Alex Ferreira");
+//
+//            //ALTERAR
+//            bemCasadoDao.atualizar(bc2.get());
+//
+//            System.out.println("\nBOMBOM COM NOME ALTERADO");
+//            // IMPRIMIR ALTERADO
+//            Optional<BemCasado> bcRetornado = bemCasadoDao.buscarPorId(bc2.get().getIdProduto());
+//            System.out.println(bcRetornado.get().getNome());
+//
+//
+//            System.out.println("DELETOU?");
+//            //DELETAR
+//            System.out.println(bemCasadoDao.deletar(bc2.get().getIdProduto()));
+//
+//
+//        } finally {
+//            bemCasadoDao.fecharConexao();
+//        }
 
 
 
