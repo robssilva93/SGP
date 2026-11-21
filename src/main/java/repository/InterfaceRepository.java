@@ -11,4 +11,4 @@ public interface InterfaceRepository<T> {
         boolean atualizar(T objeto);
         boolean deletar(int id);
     }
-
+        

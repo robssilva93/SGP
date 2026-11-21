@@ -10,7 +10,7 @@ public class ConnectionFactory {
             "jdbc:mysql://localhost:3306/confeitaria_db";
 
     private static final String USER = "root";
-    private static final String PASSWORD = "@30A04a85f";
+    private static final String PASSWORD = "Gjbpyewx1";
 
     public static Connection getConnection() {
         try {
